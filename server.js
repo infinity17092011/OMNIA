@@ -12,7 +12,7 @@ const OPENROUTER_URL = "https://openrouter.ai/api/v1/chat/completions";
 const MODELS = {
   chatgpt:  { name: "ChatGPT",  id: process.env.MODEL_CHATGPT  || "openai/gpt-5",                vision: true  },
   claude:   { name: "Claude",   id: process.env.MODEL_CLAUDE   || "anthropic/claude-sonnet-4.5", vision: true  },
-  grok:     { name: "Grok",     id: process.env.MODEL_GROK     || "x-ai/grok-4",                 vision: true  },
+  grok:     { name: "Grok",     id: process.env.MODEL_GROK     || "x-ai/grok-4.3",                vision: true  },
   deepseek: { name: "DeepSeek", id: process.env.MODEL_DEEPSEEK || "deepseek/deepseek-chat",      vision: false },
 };
 const ROUTER_MODEL = process.env.ROUTER_MODEL || "openai/gpt-4o-mini";
