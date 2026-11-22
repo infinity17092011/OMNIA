@@ -16,6 +16,7 @@ const MODELS = {
   deepseek: { name: "DeepSeek", id: process.env.MODEL_DEEPSEEK || "deepseek/deepseek-chat",      vision: false },
 };
 const ROUTER_MODEL = process.env.ROUTER_MODEL || "openai/gpt-4o-mini";
+const MAX_TOKENS = parseInt(process.env.MAX_TOKENS || "1500", 10); // caps reply length so low credits still work
 
 // ---- middleware (CORS done by hand, no extra package) ----
 app.use((req, res, next) => {
@@ -147,7 +148,7 @@ app.post("/api/chat", async (req, res) => {
       { role: "system", content: "You are a helpful assistant. Answer clearly and concisely." },
       ...past,
       { role: "user", content: userContent },
-    ]);
+    ], { max_tokens: MAX_TOKENS });
 
     res.json({ reply, ai: { key: choice.ai, name: chosen.name, model: chosen.id }, reason: choice.reason, auto });
   } catch (err) {
