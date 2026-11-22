@@ -1,9 +1,7 @@
 {
-  "name": "multi-ai-chatbot",
-  "version": "1.0.0",
-  "description": "Chatbot that auto-picks the best AI (ChatGPT, Claude, Grok, DeepSeek) via OpenRouter",
+  "name": "omnia",
+  "version": "2.0.0",
   "main": "server.js",
-  "type": "module",
   "scripts": {
     "start": "node server.js"
   },
@@ -11,7 +9,6 @@
     "node": ">=18"
   },
   "dependencies": {
-    "cors": "^2.8.5",
     "express": "^4.19.2"
   }
 }
